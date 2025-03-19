@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!--
+      PROFILE-LEVEL KEYS:
+      These keys define the entire configuration profile.
+      They apply to the whole file and ensure that the profile is uniquely identified
+      and described when installed on a device.
+    -->
+	<key>PayloadDisplayName</key>
+	<string>Cloudflare 1.1.1.1</string>
+	<key>PayloadDescription</key>
+	<string>Adds Cloudflare 1.1.1.1 to Big Sur and iOS 14 or newer systems</string>
+	<!-- Unique identifier for the entire profile -->
+	<key>PayloadIdentifier</key>
+	<string>com.mrgargsir.dns.02163B4F-4027-4AD3-8442-F19BA60E25EA.20250319</string>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<!-- Unique UUID for the overall profile -->
+	<key>PayloadUUID</key>
+	<string>1C50B75E-4956-491B-8466-C93816343D46</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+
+	<!--
+      PAYLOAD CONTENT:
+      This array contains individual payloads. In this case, there's one payload that configures DNS settings.
+    -->
+	<key>PayloadContent</key>
+	<array>
+		<dict>
+			<!-- DNS Settings Payload -->
+			<key>DNSSettings</key>
+			<dict>
+				<key>DNSProtocol</key>
+				<string>HTTPS</string>
+				<key>ServerURL</key>
+				<string>https://cloudflare-dns.com/dns-query</string>
+				<key>ServerAddresses</key>
+				<array>
+					<string>1.1.1.1</string>
+					<string>1.0.0.1</string>
+					<string>2606:4700:4700::1111</string>
+					<string>2606:4700:4700::1001</string>
+				</array>
+			</dict>
+			<!--
+              The following keys apply only to this DNS payload.
+              They allow the DNS settings to be managed separately from the overall profile.
+            -->
+			<key>PayloadType</key>
+			<string>com.apple.dnsSettings.managed</string>
+			<!-- Unique identifier for the DNS payload -->
+			<key>PayloadIdentifier</key>
+			<string>com.apple.dnsSettings.managed.B1BF23E8-30A8-4519-8DDC-13DAEDBBA83A</string>
+			<!-- Unique UUID for the DNS payload -->
+			<key>PayloadUUID</key>
+			<string>13F6426D-7BDA-4603-A118-5B862AB70F16</string>
+			<key>PayloadDisplayName</key>
+			<string>Cloudflare 1.1.1.1</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>PayloadDescription</key>
+			<string>Configures device to use Cloudflare 1.1.1.1</string>
+		</dict>
+	</array>
+	<!-- Allow removal of the profile -->
+	<key>PayloadRemovalDisallowed</key>
+	<false/>
+</dict>
+</plist>
