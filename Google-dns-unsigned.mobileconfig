@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!--
+      PROFILE-LEVEL KEYS:
+      These keys define the entire configuration profile.
+      They apply to the whole file and ensure that the profile is uniquely identified
+      and described when installed on a device.
+    -->
+	<key>PayloadDisplayName</key>
+	<string>Google Dns 8.8.8.8</string>
+	<key>PayloadDescription</key>
+	<string>Adds Google Dns 8.8.8.8 to Big Sur and iOS 14 or newer systems</string>
+	<!-- Unique identifier for the entire profile -->
+	<key>PayloadIdentifier</key>
+	<string>com.mrgargsir.dns.92626A25-C7A3-41F4-9B42-F8DF044A68F7.20250319</string>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<!-- Unique UUID for the overall profile -->
+	<key>PayloadUUID</key>
+	<string>E6601E88-23A0-4471-AA97-5FE738F099A1</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+
+	<!--
+      PAYLOAD CONTENT:
+      This array contains individual payloads. In this case, there's one payload that configures DNS settings.
+    -->
+	<key>PayloadContent</key>
+	<array>
+		<dict>
+			<!-- DNS Settings Payload -->
+			<key>DNSSettings</key>
+			<dict>
+				<key>DNSProtocol</key>
+				<string>HTTPS</string>
+				<key>ServerURL</key>
+				<string>https://dns.google/dns-query</string>
+				<key>ServerAddresses</key>
+				<array>
+					<string>8.8.8.8</string>
+					<string>8.8.4.4</string>
+					<string>2001:4860:4860::8888</string>
+					<string>2001:4860:4860::8844</string>
+				</array>
+			</dict>
+			<!--
+              The following keys apply only to this DNS payload.
+              They allow the DNS settings to be managed separately from the overall profile.
+            -->
+			<key>PayloadType</key>
+			<string>com.apple.dnsSettings.managed</string>
+			<!-- Unique identifier for the DNS payload -->
+			<key>PayloadIdentifier</key>
+			<string>com.apple.dnsSettings.managed.C78551FC-718F-423D-8846-5C53B0AF72F7</string>
+			<!-- Unique UUID for the DNS payload -->
+			<key>PayloadUUID</key>
+			<string>1806E57C-8919-4B8A-9696-77CA991BEFBF</string>
+			<key>PayloadDisplayName</key>
+			<string>Google Dns 8.8.8.8</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>PayloadDescription</key>
+			<string>Configures device to use Google Dns 8.8.8.8</string>
+		</dict>
+	</array>
+	<!-- Allow removal of the profile -->
+	<key>PayloadRemovalDisallowed</key>
+	<false/>
+</dict>
+</plist>
